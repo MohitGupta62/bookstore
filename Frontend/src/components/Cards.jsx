@@ -15,7 +15,7 @@ function Cards({ item }) {
             </h2>
             <p>{item.title}</p>
             <div className="card-actions justify-between">
-              <div className="badge badge-outline">{item.prize}</div>
+              <div className="badge badge-outline">${item.prize}</div>
               <div className="cursor-pointer px-2 py-1 rounded-full border-[2px] hover:bg-pink-500 hover:text-white duration-300">
                 Buy Now
               </div>
