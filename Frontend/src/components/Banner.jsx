@@ -1,12 +1,12 @@
 import React from "react";
-import banner from "/banner.jpg";
+import banner from "/banner.png";
 
 const Banner = () => {
   return (
     <>
       <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 flex flex-col md:flex-row my-6">
-        <div className="order-2 md:order-1 w-full md:w-1/2 md:mt-32 mt-12 space-y-12"> 
-        {/* order - kam krta hai div ko upr niche karne ke liye */}
+        <div className="order-2 md:order-1 w-full md:w-1/2 md:mt-32 mt-12 space-y-12">
+          {/* order - kam krta hai div ko upr niche karne ke liye */}
           <div className="space-y-12">
             <h1 className="text-4xl font-bold">
               Hello, welcome here to learn something{" "}
@@ -36,8 +36,8 @@ const Banner = () => {
           </div>
           <button className="btn btn-secondary">Secondary</button>
         </div>
-        <div className="order-1 w-full md:w-1/2">
-          <img src={banner} className="w-92 h-92" alt="" />
+        <div className="mt-20 order-1 w-full md:w-1/2">
+          <img src={banner} className=" md:w-[550px] md:h-[460px] md:ml-12" alt="" />
         </div>
       </div>
     </>
