@@ -21,13 +21,18 @@ function Login() {
         console.log(res.data);
         if (res.data) {
           toast.success("Login Successfully");
+          document.getElementById("my_modal_3").close();
+          setTimeout(() => {
+            window.location.reload();
+            localStorage.setItem("Users", JSON.stringify(res.data.user));
+          }, 1000);
         }
-        localStorage.setItem("Users", JSON.stringify(res.data.user));
       })
       .catch((err) => {
         if (err.response) {
           console.log(err);
           toast.error("Error :" + err.response.data.message);
+          setTimeout(() => {}, 2000);
         }
       });
   };
