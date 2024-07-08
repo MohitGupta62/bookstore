@@ -1,4 +1,5 @@
 import React from "react";
+import toast, { Toaster } from "react-hot-toast";
 import Home from "./home/Home";
 import { Route, Routes } from "react-router-dom";
 import Courses from "./courses/Courses";
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<Abouts />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
+        <Toaster />
       </div>
     </>
   );
