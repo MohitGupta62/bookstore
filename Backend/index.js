@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
+import path from "path"
 
 import bookRoute from "./route/book_route.js";
 import userRoute from "./route/user_route.js";
@@ -32,8 +33,18 @@ app.use("/book", bookRoute);
 
 app.use("/user", userRoute);
 
+// -----------------Code for deployment--------------------
+if (process.env.NODE_ENV === "production") {
+  const dirpath = path.resolve();
+
+  app.use(express.static("./Frontend/dist"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(dirpath, "./Frontend/dist", "index.html"));
+  });
+}
+
 app.get("/", (req, res) => {
-  res.send("skflk!");
+  res.send("Hello");
 });
 
 app.listen(PORT, () => {
